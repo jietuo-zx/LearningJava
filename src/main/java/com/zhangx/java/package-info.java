@@ -1,5 +1,6 @@
 /**
- * 学习Java知识
+ * Thinking in Java
+ * 
  * @author zhangx
  *
  */
