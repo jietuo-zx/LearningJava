@@ -29,5 +29,6 @@ public class Test1 {
 		System.out.println(d == e);
 		System.out.println(b == c);
 		System.out.println(0.3 == 3*0.1);
+		
 	}
 }
