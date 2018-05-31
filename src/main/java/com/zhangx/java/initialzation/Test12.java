@@ -31,37 +31,38 @@ public class Test12 {
 		System.runFinalization();
 	}
 
-	static class Tank {
+}
 
-		static int counter = 0;
-		int id = counter++;
+class Tank {
 
-		/**
-		 * false 表示空 true 表示满
-		 */
-		boolean full;
+	static int counter = 0;
+	int id = counter++;
 
-		public Tank() {
-			System.out.println("Tank " + id + " created");
-			full = true;
-		}
+	/**
+	 * false 表示空 true 表示满
+	 */
+	boolean full;
 
-		public void empty() {
-			full = false;
-		}
+	public Tank() {
+		System.out.println("Tank " + id + " created");
+		full = true;
+	}
 
-		@Override
-		protected void finalize() throws Throwable {
-			super.finalize();
-			if (full)
-				System.out.println("Error Tank " + id + " must be empty at clean up");
-			else
-				System.out.println("Tank " + id + " clean up is OK!");
-		}
+	public void empty() {
+		full = false;
+	}
 
-		@Override
-		public String toString() {
-			return "Tank " + id;
-		}
+	@Override
+	protected void finalize() throws Throwable {
+		super.finalize();
+		if (full)
+			System.out.println("Error Tank " + id + " must be empty at clean up");
+		else
+			System.out.println("Tank " + id + " clean up is OK!");
+	}
+
+	@Override
+	public String toString() {
+		return "Tank " + id;
 	}
 }
