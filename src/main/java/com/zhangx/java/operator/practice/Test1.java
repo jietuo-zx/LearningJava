@@ -17,4 +17,6 @@ public class Test1 {
 		System.out.println((char)(x >> 1));
 		System.out.println((char)(x % y));
 	}
+	
+	
 }
